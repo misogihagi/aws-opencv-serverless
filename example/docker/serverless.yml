@@ -119,3 +119,5 @@ custom:
     pythonRequirements:
      dockerizePip: true
      dockerFile: ./Dockerfile
+     dockerExtraFiles: 
+       -  /var/dist/cv2.cpython-38-x86_64-linux-gnu.so
