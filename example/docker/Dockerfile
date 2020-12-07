@@ -44,14 +44,9 @@ RUN cmake3 \
   
 RUN find ../../python/ -name *.so | xargs -n 1 strip -s
 
-RUN mkdir /var/task/dist
+RUN mkdir /var/dist
 
-RUN cp ../../python/lib/python3.8/site-packages/cv2/python-3.8/* /var/task/dist
-
-WORKDIR /var/task/dist
-
-RUN pip install -r requirements.txt -t .
-
+RUN cp ../../python/lib/python3.8/site-packages/cv2/python-3.8/* /var/dist
 
 RUN mkdir /var/task/output
-CMD cp -r /var/task/dist/ /var/task/output/
+CMD cp -r /var/dist/ /var/task/output/
